@@ -15,8 +15,8 @@ namespace UnitTest1
 			int t;
 			const int n = 10;
 			int a[n] = { 22,42,37,62,10,-43,-11,39,53,-80 };
-			t = Sum(a, n);
-			Assert::AreEqual(t, 56);
+			t = Max(a, n);
+			Assert::AreEqual(t, 62);
 		}
 	};
 }
