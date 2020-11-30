@@ -18,7 +18,7 @@ int Sum(int* a, const int size)
 {
 	int S = 0;
 	for (int i = 0; i < size; i++)
-		if ((a[i] % 2 == 0) && (a[i] > 0))
+		if (a[i] < 0 && i % 3 != 0)
 			S += a[i];
 	return S;
 }
@@ -26,14 +26,14 @@ int Count(int* a, const int size)
 {
 	int k = 0;
 	for (int i = 0; i < size; i++)
-		if ((a[i] % 2 == 0) && (a[i] > 0))
+		if (a[i] < 0 && i % 3 != 0)
 			k += 1;
 	return k;
 }
 void Replacing(int* a, const int size)
 {
 	for (int i = 0; i < size; i++)
-		if ((a[i] % 2 == 0) && (a[i] > 0))
+		if (a[i] < 0 && i % 3 != 0)
 			cout << setw(4) << a[i];
 		else
 			cout << setw(4) << 0;
@@ -47,8 +47,8 @@ int main()
 	srand((unsigned)time(NULL)); // ініціалізація генератора випадкових чисел
 	const int t = 25;
 	int a[t];
-	int Low = -5;
-	int High = 12;
+	int Low = -11;
+	int High = 13;
 	Create(a, t, Low, High);
 	Print(a, t);
 	int k = Sum(a, t);
