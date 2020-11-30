@@ -13,10 +13,10 @@ namespace UnitTest1
 		TEST_METHOD(TestMethod1)
 		{
 			int t;
-			const int n = 7;
-			int r[n] = { 4,5,3,7,3,2,6 };
+			const int n = 10;
+			int r[n] = { -5,0,-3,-4,2,3,-1,-2,-9,1 };
 			t = Sum(r, n, 0);
-			Assert::AreEqual(t, 12);
+			Assert::AreEqual(t, -14);
 		}
 	};
 }

@@ -18,7 +18,7 @@ int Sum(int* a, const int size, int i)
 {
 	if (i < size)
 	{
-		if ((a[i] % 2 == 0) && (a[i] > 0))
+		if (a[i] < 0 && i % 3 != 0)
 			return a[i] + Sum(a, size, i + 1);
 		else
 			return Sum(a, size, i + 1);
@@ -28,7 +28,7 @@ int Sum(int* a, const int size, int i)
 }
 int Count(int* a, const int size, int i, int k)
 {
-	if ((a[i] % 2 == 0) && (a[i] > 0))
+	if (a[i] < 0 && i % 3 != 0)
 		k += 1;
 	if (i < size - 1)
 		return Count(a, size, i + 1, k);
@@ -37,7 +37,7 @@ int Count(int* a, const int size, int i, int k)
 }
 void Replacing(int* a, const int size, int i, int k)
 {
-	if ((a[i] % 2 == 0) && (a[i] > 0))
+	if (a[i] < 0 && i % 3 != 0)
 		cout << setw(4) << a[i];
 	else
 		cout << setw(4) << 0;
@@ -53,8 +53,8 @@ int main()
 	srand((unsigned)time(NULL)); // ≥н≥ц≥ал≥зац≥€ генератора випадкових чисел
 	const int t = 25;
 	int a[t];
-	int Low = -5;
-	int High = 12;
+	int Low = -11;
+	int High = 1;
 	Create(a, t, Low, High);
 	Print(a, t);
 	cout << "—ума чисел, що задов≥льн€ють умову =  " << Sum(a, t, 0) << endl;
